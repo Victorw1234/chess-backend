@@ -16,6 +16,12 @@ namespace ChessBackend.Hubs
             return true;
         }
 
+        public async Task<bool> BroadcastName(string name,string roomName)
+        {
+            await Clients.OthersInGroup(roomName).SendAsync("nameBroadcasted", name);
+            return true;
+        }
+
         public async Task<bool> StartGame(string roomName)
         {
             await Clients.OthersInGroup(roomName).SendAsync("gameStarted", true);
