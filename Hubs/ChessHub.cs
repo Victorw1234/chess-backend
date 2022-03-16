@@ -16,6 +16,12 @@ namespace ChessBackend.Hubs
             return true;
         }
 
+        public async Task<bool> JoinRoomNoMessage(string name, string roomName)
+        {
+            await Groups.AddToGroupAsync(Context.ConnectionId, roomName);
+            return true;
+        }
+
         public async Task<bool> BroadcastName(string name,string roomName)
         {
             await Clients.OthersInGroup(roomName).SendAsync("nameBroadcasted", name);
