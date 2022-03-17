@@ -52,6 +52,7 @@ namespace ChessBackend
             app.UseCors("ClientPermission");
             app.UseRouting();
 
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

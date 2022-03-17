@@ -13,6 +13,7 @@ namespace ChessBackend.Controllers
     {
         public string Index(string id)
         {
+
             return id;
         }
     }

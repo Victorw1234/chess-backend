@@ -12,7 +12,9 @@ namespace ChessBackend.Models
         public int y { get; set; }
         
         // New position of the piece
+
         public int x1 { get; set; }
         public int y1 { get; set; }
+
     }
 }
